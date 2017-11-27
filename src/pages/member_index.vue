@@ -20,7 +20,7 @@
       </ul>
       <button class="wxPay">微信支付</button>
       <ul class="types">
-        <li>我的邀请</li>
+        <router-link to="myInvitation"><li>我的邀请</li></router-link>
         <li>会员卡详情</li>
         <li>消费记录</li>
         <li>人脸识别</li>

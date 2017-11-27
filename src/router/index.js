@@ -8,6 +8,7 @@ import coupon from '@/pages/coupon'
 import balance from '@/pages/balance'
 import register from '@/pages/register'
 import memberRules from '@/pages/memberRules'
+import myInvitation from '@/pages/myInvitation'
 
 Vue.use(Router)
 
@@ -67,6 +68,14 @@ export default new Router({
       component: memberRules,
       meta: {
         title: '会员章程'
+      }
+    },
+    {
+      path: '/myInvitation',
+      name: 'myInvitation',
+      component: myInvitation,
+      meta: {
+        title: '我的邀请'
       }
     }
   ]

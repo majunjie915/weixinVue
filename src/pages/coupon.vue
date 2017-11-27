@@ -2,7 +2,11 @@
     <div class="coupon">
       <ul class="nav">
         <li>
-          <p @click="showStation"><i class="overflowEllipsis">{{curStation}}</i><span>({{stationItems.length}})</span></p>
+          <p @click="showStation">
+            <i class="overflowEllipsis">{{curStation}}</i>
+            <span>({{stationItems.length}})</span>
+            <img src="../../static/image/downArrow@2x.png" />
+          </p>
           <div v-show="isStationShow">
             <p v-for="item in stationItems"  v-bind:class="{selected:stationId==item.id}"
                v-bind:id="item.id" @click="selectStation">
@@ -11,37 +15,47 @@
           </div>
         </li>
         <li>
-          <p @click="showStatus"><i>{{curStatus}}</i><span>({{statusItems.length}})</span></p>
+          <p @click="showStatus">
+            <i>{{curStatus}}</i>
+            <span>({{statusItems.length}})</span>
+            <img src="../../static/image/downArrow@2x.png" />
+          </p>
           <div v-show="isStatusShow">
             <p v-for="item in statusItems" :id="item.id"
                :class="{selected: statusId==item.id}" @click="selectStatus">{{item.name}}</p>
           </div>
         </li>
       </ul>
-      <section class="content" @click="hideToast">
-        <div v-if="false">
-          <p style="font-size: 0.32rem;color: #494D51;margin: 4.74rem 2.9rem;">暂无优惠券</p>
-        </div>
-        <ul v-else-if="true">
-          <li v-for="item in [1,2,3,4]" style="margin-top: 0.4rem;" :class="{unused:statusId=='unused',used:statusId=='used',expired:statusId=='expired'}">
-            <div class="top">
-              <div class="left">
-                <p style="font-size: 0.48rem;margin-top: 0.26rem">￥<span style="font-size: 0.8rem">20</span></p>
-                <p>满<span>199</span>元可用</p>
+      <div v-if="stationItems.length==0 || statusItems.length==0" class="content">
+        <img src="../../static/image/noCoupon@2x.png" style="width: 2.58rem;margin: 1.6rem auto 0.4rem;" />
+        <p style="font-size: 0.32rem;color: #494D51;text-align: center">暂无优惠券</p>
+      </div>
+      <div v-else>
+        <section class="content" @click="hideToast">
+          <div v-if="false">
+            <p style="font-size: 0.32rem;color: #494D51;margin: 4.74rem 2.9rem;">暂无优惠券</p>
+          </div>
+          <ul v-else-if="true">
+            <li v-for="item in [1,2,3,4]" style="margin-top: 0.4rem;" :class="{unused:statusId=='unused',used:statusId=='used',expired:statusId=='expired'}">
+              <div class="top">
+                <div class="left">
+                  <p style="font-size: 0.48rem;margin-top: 0.26rem">￥<span style="font-size: 0.8rem">20</span></p>
+                  <p>满<span>199</span>元可用</p>
+                </div>
+                <div class="right">
+                  <p style="font-size: 0.32rem;color: #4A4D51;">双十二满减活动</p>
+                  <p style="margin: 0.08rem 0;">2017.12.12至2017.12.12</p>
+                  <p>仅汽油产品可用</p>
+                </div>
               </div>
-              <div class="right">
-                <p style="font-size: 0.32rem;color: #4A4D51;">双十二满减活动</p>
-                <p style="margin: 0.08rem 0;">2017.12.12至2017.12.12</p>
-                <p>仅汽油产品可用</p>
+              <div class="bottom">
+                <p>适用于海淀黄庄站</p>
+                <!--<p style="color: #4A4D51;" v-if="statusId=='unused'">距您<span>1.3</span>km</p>-->
               </div>
-            </div>
-            <div class="bottom">
-              <p>适用于海淀黄庄站</p>
-              <!--<p style="color: #4A4D51;" v-if="statusId=='unused'">距您<span>1.3</span>km</p>-->
-            </div>
-          </li>
-        </ul>
-      </section>
+            </li>
+          </ul>
+        </section>
+      </div>
     </div>
 </template>
 
@@ -77,12 +91,16 @@
       },
       methods: {
         showStation: function(){
-          this.isStationShow = true;
-          this.isStatusShow = false;
+          if(this.stationItems.length!=0){
+            this.isStationShow = true;
+            this.isStatusShow = false;
+          }
         },
         showStatus: function () {
-          this.isStatusShow = true;
-          this.isStationShow = false;
+          if (this.statusItems.length!=0){
+            this.isStatusShow = true;
+            this.isStationShow = false;
+          }
         },
         selectStation: function (e){
           this.curStation = e.currentTarget.innerHTML.trim();
@@ -148,6 +166,13 @@
   .coupon .nav li div p{
     padding:0.1rem 0.2rem;
     border-bottom: solid 0.01rem #ccc;
+  }
+  .coupon .nav li p img{
+    width: 0.12rem;
+    height: 0.08rem;
+    position: relative;
+    top: 0.4rem;
+    left: 0.2rem;
   }
   .coupon .selected{
     background: blue;
