@@ -12,6 +12,9 @@ import myInvitation from '@/pages/myInvitation'
 import memberInfo from '@/pages/memberInfo'
 import expensesRecord from '@/pages/expensesRecord'
 import paymentSucc from '@/pages/paymentSucc'
+import chooseCoupon from '@/pages/chooseCoupon'
+import attentionEntrance from '@/pages/attentionEntrance'
+import successfulGet from '@/pages/successfulGet'
 import refuelBefore from '../pages/refuel-before.vue'
 import OrderConfirmation from '../pages/order-confirmation.vue'
 import OrderSuccess from '../pages/order-success.vue'
@@ -115,6 +118,30 @@ export default new Router({
       component: paymentSucc,
       meta: {
         title: '支付成功'
+      }
+    },
+    {
+      path: '/chooseCoupon',
+      name: 'chooseCoupon',
+      component: chooseCoupon,
+      meta: {
+        title: '选择优惠券'
+      }
+    },
+    {
+      path: '/attentionEntrance',
+      name: 'attentionEntrance',
+      component: attentionEntrance,
+      meta: {
+        title: '邀请送券'
+      }
+    },
+    {
+      path: '/successfulGet',
+      name: 'successfulGet',
+      component: successfulGet,
+      meta: {
+        title: '邀请送券'
       }
     },
     {
