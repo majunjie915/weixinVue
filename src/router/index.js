@@ -12,6 +12,17 @@ import myInvitation from '@/pages/myInvitation'
 import memberInfo from '@/pages/memberInfo'
 import expensesRecord from '@/pages/expensesRecord'
 import paymentSucc from '@/pages/paymentSucc'
+import refuelBefore from '../pages/refuel-before.vue'
+import OrderConfirmation from '../pages/order-confirmation.vue'
+import OrderSuccess from '../pages/order-success.vue'
+import Grade from '../pages/grade.vue'
+import GradeSuccess from '../pages/grade-success.vue'
+import AffirmOil from '../pages/affirm-oil.vue'
+import CollectOil from '../pages/collect-oil.vue'
+import OilDetails from '../pages/oil-details.vue'
+import OrderDetails from '../pages/order-details.vue'
+
+
 Vue.use(Router)
 
 export default new Router({
@@ -103,6 +114,46 @@ export default new Router({
       meta: {
         title: '支付成功'
       }
-    }
+    },
+    {
+      path: '/AffirmOil',
+      component: AffirmOil
+    },
+    {
+      path: '/refuel-before',
+      component: refuelBefore
+    },
+    {
+      path: '/order-confirmation',
+      component: OrderConfirmation
+    },
+    {
+      path: '/order-success',
+      component: OrderSuccess
+    },
+    {
+      path: '/grade-success',
+      component: GradeSuccess
+    },
+    {
+      path: '/grade',
+      component: Grade
+    },
+    {
+      path: '/affirm-oil',
+      component: AffirmOil
+    },
+    {
+      path: '/collect-oil',
+      component: CollectOil
+    },
+    {
+      path: '/oil-details',
+      component: OilDetails
+    },
+    {
+      path: '/order-details',
+      component: OrderDetails
+    },
   ]
 })
