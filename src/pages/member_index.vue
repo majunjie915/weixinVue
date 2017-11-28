@@ -21,8 +21,8 @@
       <button class="wxPay">微信支付</button>
       <ul class="types">
         <router-link to="myInvitation"><li>我的邀请</li></router-link>
-        <li>会员卡详情</li>
-        <li>消费记录</li>
+        <router-link to="memberInfo"><li>会员卡详情</li></router-link>
+        <router-link to="expensesRecord"><li>消费记录</li></router-link>
         <li>人脸识别</li>
       </ul>
     </div>

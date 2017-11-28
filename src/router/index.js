@@ -9,7 +9,9 @@ import balance from '@/pages/balance'
 import register from '@/pages/register'
 import memberRules from '@/pages/memberRules'
 import myInvitation from '@/pages/myInvitation'
-
+import memberInfo from '@/pages/memberInfo'
+import expensesRecord from '@/pages/expensesRecord'
+import paymentSucc from '@/pages/paymentSucc'
 Vue.use(Router)
 
 export default new Router({
@@ -76,6 +78,30 @@ export default new Router({
       component: myInvitation,
       meta: {
         title: '我的邀请'
+      }
+    },
+    {
+      path: '/memberInfo',
+      name: 'memberInfo',
+      component: memberInfo,
+      meta: {
+        title: '会员卡详情'
+      }
+    },
+    {
+      path: '/expensesRecord',
+      name: 'expensesRecord',
+      component: expensesRecord,
+      meta: {
+        title: '消费记录'
+      }
+    },
+    {
+      path: '/paymentSucc',
+      name: 'paymentSucc',
+      component: paymentSucc,
+      meta: {
+        title: '支付成功'
       }
     }
   ]
