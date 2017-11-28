@@ -102,7 +102,31 @@
         </ul>
         <a>查看更多评论<i></i></a>
       </div>
-
+      <!--弹窗-->
+      <div v-show="isShow">
+        <img  @click="isShow=!isShow" class="close" src="/static/image/close@2x.png" alt="关闭">
+        <div class="model"></div>
+        <div class="r-bg">
+          <p>恭喜您获得20元优惠券一张</p>
+          <p>已放到我的优惠券</p>
+        </div>
+        <div class="r-bg-container">
+          <div class="top">
+            <div class="left">
+              <p style="font-size: 0.48rem;margin-top: 0.26rem">￥<span style="font-size: 0.8rem">20</span></p>
+              <p>满<span>199</span>元可用</p>
+            </div>
+            <div class="right">
+              <p style="font-size: 0.32rem;color: #4A4D51;">双十二满减活动</p>
+              <p style="margin: 0.08rem 0;">2017.12.12至2017.12.12</p>
+              <p>仅汽油产品可用</p>
+            </div>
+          </div>
+          <div class="bottom">
+            <p>适用于海淀黄庄站</p>
+          </div>
+        </div>
+      </div>
     </div>
 </template>
 
@@ -116,6 +140,7 @@
           list1:[1,2,3],
           page: 1,
           pageSize: 1,
+          isShow:true,
           src1:"/static/image/yishoucang.png",
           src2:"/static/image/weishoucang.png",
           alt:'已收藏'
@@ -142,6 +167,81 @@
 </script>
 
 <style scoped>
+  .oil-details .close{
+    width:0.814rem;
+    height:0.814rem;
+    position: fixed;
+    top:7.7rem;
+    z-index:222;
+    margin-left: 3.36rem;
+  }
+  .oil-details .r-bg-container{
+    width: 6.7rem;
+    height:2.4rem;
+    margin: 0 0.4rem;
+    background: url("../../static/image/coupon@2x.png") 0 0 no-repeat;
+    background-size: 100%;
+    position: fixed;z-index: 233;
+    top:3.6rem;
+  }
+  .oil-details .top{
+    display: flex;
+    justify-content: flex-start;
+    height: 1.84rem;
+  }
+  .oil-details .top .left{
+    width: 2.48rem;
+    text-align: center;
+    font-size: 0.24rem;
+    color: #EF5859;
+  }
+  .oil-details .content li.unused .left{
+    color: #EF5859;
+  }
+  .oil-details .top .right{
+    font-size: 0.24rem;
+    color: #85959B;
+    margin-top: 0.26rem;
+  }
+  .oil-details .bottom{
+    display: flex;
+    justify-content: space-between;
+    height:0.54rem;
+    line-height: 0.54rem;
+    font-size: 0.24rem;
+    color: #85959B;
+    padding: 0 0.4rem;
+  }
+  .oil-details .model{
+    position: fixed;  top: 0;  right: 0;
+    bottom: 0;  left: 0;  overflow: hidden;
+    outline: 0;  -webkit-overflow-scrolling: touch;
+    background-color: rgb(0, 0, 0);  filter: alpha(opacity=60);
+    background-color: rgba(0, 0, 0, 0.6);  z-index: 199;
+  }
+  .oil-details .r-bg{
+    background-image: linear-gradient(-180deg, #F88E8F 0%, #EF5859 99%);
+    -webkit-background-image: linear-gradient(-180deg, #F88E8F 0%, #EF5859 99%);
+    border-radius: 0.2rem;
+    width:5.5rem;
+    height:4.7rem;
+    position: fixed;
+    top:2.5rem;margin-left:1rem;z-index: 222;
+  }
+  .oil-details .r-bg>p:nth-child(1){
+    font-size: 0.36rem;
+    text-align: center;
+    color: #FFFFFF;
+    line-height: 0.5rem;
+    padding-top: 0.38rem;
+  }
+  .oil-details .r-bg>p:nth-child(2){
+    font-size: 0.32rem;
+    text-align: center;
+    color: #FFFFFF;
+    opacity: 0.8;
+    padding-top:2.9rem;
+  }
   .oil-details .oil-c>a{
     text-align: center;
     display: block;
