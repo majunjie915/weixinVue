@@ -1,6 +1,6 @@
 <template>
   <div class="paymentSucc">
-      <ul class="coupon">
+    <ul class="coupon">
         <li>
           <div class="left">
             <p>
@@ -16,20 +16,23 @@
         </li>
         <li style="font-size: 0.24rem;margin: 0.44rem;color: #85959B;">适用于海淀黄庄站</li>
       </ul>
-      <p style="font-size: 0.24rem;color: #fff;text-align: center">
+    <p style="font-size: 0.24rem;color: #fff;text-align: center">
         满5人领取，您即可获得10元中化加油券一张，加油即减
       </p>
-      <p style="font-size: 0.28rem;color: #fff;text-align: center;margin: 0.6rem 0 0.4rem;">
+    <p style="font-size: 0.28rem;color: #fff;text-align: center;margin: 0.6rem 0 0.4rem;">
         已有<span>3</span>人参与，
         还差<span>2</span>人
       </p>
-      <p class="invited">
+    <p class="invited">
         <img src="../../static/image/checked@2x.png" v-for="item in [1,2,3]" />
         <img src="../../static/image/none@2x.png" v-for="item in [1,2]" />
       </p>
     <p class="notice">成功邀请3名好友，您还可以获得一张满199减10元面额的加油券</p>
-    <p class="continue">继续邀请</p>
+    <p class="continue" @click="attentionFriend">邀请好友</p>
+    <div class="mask" v-if="isShow==true">
+      <img src="/static/image/attentionFriend@2x.png"/>
     </div>
+  </div>
 </template>
 
 <script>
@@ -38,8 +41,16 @@
     name: "myInvitation",
     data () {
       return {
-
+        isShow: false
       };
+    },
+    methods: {
+      attentionFriend : function() {
+        this.isShow = true;
+        setTimeout( () => {
+          this.isShow = false;
+        } ,2000)
+      }
     }
   }
 
@@ -111,5 +122,20 @@
     width: 5.94rem;
     text-align: center;
     margin: 1rem auto 0;
+  }
+  .paymentSucc .mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background: #000;
+    opacity:0.6;
+  }
+  .paymentSucc .mask img{
+    width: 2.54rem;
+    float: right;
+    margin-right: 0.74rem;
+    margin-top: 0.18rem;
   }
 </style>

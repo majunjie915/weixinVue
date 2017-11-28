@@ -6,7 +6,10 @@
           关于积分</router-link>
         </p>
         <span class="curPoints">当前积分(个)</span>
-        <p class="points">{{ point }}</p>
+        <p class="points">
+          {{ point }}
+          <img src="/static/image/points@2x.png"/>
+        </p>
       </div>
       <div class="blank10"></div>
       <div class="bottom">
@@ -101,6 +104,12 @@
     font-size: 48px;
     color: #4080E8;
     margin:0.1rem 0 0.36rem;
+  }
+  .memberPoints .points img{
+    position: absolute;
+    right: 0;
+    top: 0.86rem;
+    width: 1.12rem;
   }
   .memberPoints .bottom .title{
     border-bottom: solid 0.01rem #f5f5f5;

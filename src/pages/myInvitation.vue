@@ -33,8 +33,8 @@
           还差<span>2</span>人
         </p>
         <p class="invited">
-          <img src="../../static/image/checked@2x.png" v-for="item in [1,2,3]" />
-          <img src="../../static/image/none@2x.png" v-for="item in [1,2]" />
+          <img src="/static/image/checked@2x.png" v-for="item in [1,2,3]" />
+          <img src="/static/image/noneGray@2x.png" v-for="item in [1,2]" />
         </p>
         <p class="continue">继续邀请</p>
         <p class="deadline">截止日期：2017-12-30 12:00:00</p>

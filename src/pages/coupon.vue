@@ -5,7 +5,7 @@
           <p @click="showStation">
             <i class="overflowEllipsis">{{curStation}}</i>
             <span>({{stationItems.length}})</span>
-            <img src="../../static/image/downArrow@2x.png" />
+            <img src="/static/image/downArrow@2x.png" />
           </p>
           <div v-show="isStationShow">
             <p v-for="item in stationItems"  v-bind:class="{selected:stationId==item.id}"
@@ -18,7 +18,7 @@
           <p @click="showStatus">
             <i>{{curStatus}}</i>
             <span>({{statusItems.length}})</span>
-            <img src="../../static/image/downArrow@2x.png" />
+            <img src="/static/image/downArrow@2x.png" />
           </p>
           <div v-show="isStatusShow">
             <p v-for="item in statusItems" :id="item.id"
@@ -27,7 +27,7 @@
         </li>
       </ul>
       <div v-if="stationItems.length==0 || statusItems.length==0" class="content">
-        <img src="../../static/image/noCoupon@2x.png" style="width: 2.58rem;margin: 1.6rem auto 0.4rem;" />
+        <img src="/static/image/noCoupon@2x.png" style="width: 2.58rem;margin: 1.6rem auto 0.4rem;" />
         <p style="font-size: 0.32rem;color: #494D51;text-align: center">暂无优惠券</p>
       </div>
       <div v-else>
