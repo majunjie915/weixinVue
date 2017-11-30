@@ -9,7 +9,7 @@
           <img src="../../static/image/coupon@2x.png"/>
         </div>
         <div class="right">
-          <h3 class="name">
+          <h3 class="name" @click="linkTo('/order-details')">
             海淀中关村1号加油站
             <img src="../../static/image/rightArrow@2x.png" />
           </h3>
@@ -19,7 +19,7 @@
           </p>
           <p class="time" style="color: #C2C7CE;margin-top: 0.12rem">2017-05-12 12:30:45</p>
           <p v-if="item.isComment" class="commented">已评价</p>
-          <p v-else class="toComment">立即评价</p>
+          <p v-else class="toComment" @click="linkTo('/grade')">立即评价</p>
         </div>
       </li>
     </ul>
@@ -42,7 +42,9 @@
 
       },
       methods: {
-
+        linkTo(path){
+          this.$router.push(path)
+        }
       }
     }
 

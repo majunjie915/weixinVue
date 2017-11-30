@@ -16,7 +16,7 @@
           同意<router-link to="/memberRules" style="color: #267FF0;">《会员章程》</router-link>
         </li>
       </ul>
-      <p class="complete" @click="register" v-show="isComplete">完成</p>
+      <p class="complete" @click="linkTo('/')" v-show="isComplete">完成</p>
       <p class="complete" @click="verificationAll" v-show="!isComplete">完成</p>
 
       <p class="toast" v-show="isToast">{{toastMessage}}</p>
@@ -44,6 +44,9 @@
 
       },
       methods: {
+        linkTo(path){
+          this.$router.push(path)
+        },
         verificationTel: function(){
           let reg = /^(0|86|17951)?(13[0-9]|15[012356789]|17[03678]|18[0-9]|14[57])[0-9]{8}$/;
           if (!reg.test(this.mobile)){
@@ -78,8 +81,8 @@
             } ,2000)
           }
         },
-        register: function(){
-          this.$router.push("/");
+        linkTo(path){
+          this.$router.push(path)
         },
         getCode(){
           const TIME_COUNT = 60;

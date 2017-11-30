@@ -1,6 +1,6 @@
 <template>
     <div class="collect-oil">
-      <div>
+      <div v-for="L in list">
         <div class="flex">
           <img class="img-portrait" src="/static/image/collect.png" alt="">
           <div style="margin-left: -1.2rem">
@@ -10,72 +10,12 @@
               <img class="img-activity" src="/static/image/yqfq.png" alt="">
             </div>
           </div>
-          <img class="img-collect" src="/static/image/collect.png" alt="">
+          <img @click="linkTo('/oil-details')" class="img-collect" src="/static/image/collect.png" alt="">
         </div>
         <div class="dotted"></div>
         <div class="flex1">
           <button @click="linkTo('/refuel-before')">一键加油</button>
           <span>距您1.5km</span>
-          <img src="/static/image/gohere.png" alt="">
-        </div>
-        <div class="solid"></div>
-      </div>
-      <div>
-        <div class="flex">
-          <img class="img-portrait" src="/static/image/collect.png" alt="">
-          <div style="margin-left: -1.2rem">
-            <p class="title">中关村1号加油站</p>
-            <div class="flex">
-              <img class="img-activity" src="/static/image/yqfq.png" alt="">
-              <img class="img-activity" src="/static/image/yqfq.png" alt="">
-            </div>
-          </div>
-          <img class="img-collect" src="/static/image/collect.png" alt="">
-        </div>
-        <div class="dotted"></div>
-        <div class="flex1">
-          <button @click="linkTo('/refuel-before')">一键加油</button>
-          <span>距您11.5km</span>
-          <img src="/static/image/gohere.png" alt="">
-        </div>
-        <div class="solid"></div>
-      </div>
-      <div>
-        <div class="flex">
-          <img class="img-portrait" src="/static/image/collect.png" alt="">
-          <div style="margin-left: -1.2rem">
-            <p class="title">中关村1号加油站</p>
-            <div class="flex">
-              <img class="img-activity" src="/static/image/yqfq.png" alt="">
-              <img class="img-activity" src="/static/image/scsq.png" alt="">
-            </div>
-          </div>
-          <img class="img-collect" src="/static/image/collect.png" alt="">
-        </div>
-        <div class="dotted"></div>
-        <div class="flex1">
-          <button>一键加油</button>
-          <span>距您11.5km</span>
-          <img src="/static/image/gohere.png" alt="">
-        </div>
-        <div class="solid"></div>
-      </div>
-      <div>
-        <div class="flex">
-          <img class="img-portrait" src="/static/image/collect.png" alt="">
-          <div style="margin-left: -1.2rem">
-            <p class="title">中关村1号加油站</p>
-            <div class="flex">
-              <img class="img-activity" src="/static/image/yqfq.png" alt="">
-              <img class="img-activity" src="/static/image/hyzj.png" alt="">
-            </div>
-          </div>
-          <img class="img-collect" src="/static/image/collect.png" alt="">
-        </div>
-        <div class="dotted"></div>
-        <div class="flex1">
-          <button>一键加油</button>
-          <span>距您11.5km</span>
           <img src="/static/image/gohere.png" alt="">
         </div>
         <div class="solid"></div>
@@ -86,6 +26,11 @@
 <script>
 
     export default {
+      data(){
+        return{
+          list:[1,2,3,4]
+        }
+      },
       methods:{
         linkTo(path){
           this.$router.push(path)

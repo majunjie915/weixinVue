@@ -145,52 +145,92 @@ export default new Router({
       }
     },
     {
-      path: '/AffirmOil',
-      component: AffirmOil
-    },
-    {
       path: '/refuel-before',
-      component: refuelBefore
+      name: 'refuel-before',
+      component: refuelBefore,
+      meta: {
+        title: '一键加油'
+      }
     },
     {
       path: '/order-confirmation',
-      component: OrderConfirmation
+      name: 'order-confirmation',
+      component: OrderConfirmation,
+      meta: {
+        title: '订单确认'
+      }
     },
     {
       path: '/order-success',
-      component: OrderSuccess
+      name: 'order-success',
+      component: OrderSuccess,
+      meta: {
+        title: '支付成功'
+      }
     },
     {
       path: '/grade-success',
-      component: GradeSuccess
+      name: 'grade-success',
+      component: GradeSuccess,
+      meta: {
+        title: '评论'
+      }
     },
     {
       path: '/grade',
-      component: Grade
+      name: 'grade',
+      component: Grade,
+      meta: {
+        title: '评论'
+      }
     },
     {
       path: '/affirm-oil',
-      component: AffirmOil
+      name: 'affirm-oil',
+      component: AffirmOil,
+      meta: {
+        title: '确认油站'
+      }
     },
     {
       path: '/collect-oil',
-      component: CollectOil
+      name: 'collect-oil',
+      component: CollectOil,
+      meta: {
+        title: '收藏油站'
+      }
     },
     {
       path: '/oil-details',
-      component: OilDetails
+      name: 'oil-details',
+      component: OilDetails,
+      meta: {
+        title: '油站详情'
+      }
     },
     {
       path: '/order-details',
-      component: OrderDetails
+      name: 'order-details',
+      component: OrderDetails,
+      meta: {
+        title: '订单详情'
+      }
     },
     {
       path: '/invite-stamps',
-      component: InviteStamps
+      name: 'invite-stamps',
+      component: InviteStamps,
+      meta: {
+        title: '邀请送券'
+      }
     },
     {
       path: '/oil-nearby',
-      component: OilNearby
+      name: 'oil-nearby',
+      component: OilNearby,
+      meta: {
+        title: '附近油站'
+      }
     },
   ]
 })

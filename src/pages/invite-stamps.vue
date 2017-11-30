@@ -22,7 +22,7 @@
         <yd-button v-show="!show" class="m-button">{{count}}s后重发</yd-button>
         <p class="reg" v-show="isReg">{{message}}</p>
       </div>
-      <yd-button size="large" class="m-btn">点击领取</yd-button>
+      <yd-button size="large" @click.native="linkTo('/coupon/all/unused')" class="m-btn">点击领取</yd-button>
     </div>
 </template>
 
@@ -42,6 +42,9 @@
         }
       },
       methods:{
+        linkTo(path){
+          this.$router.push(path)
+        },
         verificationPhone(){
           let reg=11 && /^(0|86|17951)?(13[0-9]|15[012356789]|17[03678]|18[0-9]|14[57])[0-9]{8}$/;
           if(this.phone==''){

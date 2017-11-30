@@ -13,7 +13,7 @@
         <yd-textarea  slot="right" placeholder="留言不超过50个字" maxlength="50"></yd-textarea>
       </yd-cell-item>
     </yd-cell-group>
-    <yd-button class="my-button" size="large" type="primary">提交评价</yd-button>
+    <yd-button class="my-button" size="large" type="primary" @click.native="linkTo('/grade-success')">提交评价</yd-button>
   </div>
 </template>
 
@@ -25,6 +25,11 @@
           ydswitch: true,
           rate4:5
         }
+      },
+      methods:{
+        linkTo(path){
+          this.$router.push(path)
+        },
       }
     }
 
