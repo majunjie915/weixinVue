@@ -15,6 +15,7 @@ import paymentSucc from '@/pages/paymentSucc'
 import chooseCoupon from '@/pages/chooseCoupon'
 import attentionEntrance from '@/pages/attentionEntrance'
 import successfulGet from '@/pages/successfulGet'
+import saleOut from '@/pages/saleOut'
 import refuelBefore from '../pages/refuel-before.vue'
 import OrderConfirmation from '../pages/order-confirmation.vue'
 import OrderSuccess from '../pages/order-success.vue'
@@ -25,7 +26,6 @@ import CollectOil from '../pages/collect-oil.vue'
 import OilDetails from '../pages/oil-details.vue'
 import OrderDetails from '../pages/order-details.vue'
 import InviteStamps from '../pages/invite-stamps.vue'
-import OilNearby from '../pages/oil-nearby.vue'
 
 
 Vue.use(Router)
@@ -145,6 +145,14 @@ export default new Router({
       }
     },
     {
+      path: '/saleOut/:message',
+      name: 'saleOut',
+      component: saleOut,
+      meta: {
+        title: '券已领完'
+      }
+    },
+    {
       path: '/AffirmOil',
       component: AffirmOil
     },
@@ -187,10 +195,6 @@ export default new Router({
     {
       path: '/invite-stamps',
       component: InviteStamps
-    },
-    {
-      path: '/oil-nearby',
-      component: OilNearby
     },
   ]
 })
