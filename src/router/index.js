@@ -15,6 +15,7 @@ import paymentSucc from '@/pages/paymentSucc'
 import chooseCoupon from '@/pages/chooseCoupon'
 import attentionEntrance from '@/pages/attentionEntrance'
 import successfulGet from '@/pages/successfulGet'
+import saleOut from '@/pages/saleOut'
 import refuelBefore from '../pages/refuel-before.vue'
 import OrderConfirmation from '../pages/order-confirmation.vue'
 import OrderSuccess from '../pages/order-success.vue'
@@ -25,7 +26,6 @@ import CollectOil from '../pages/collect-oil.vue'
 import OilDetails from '../pages/oil-details.vue'
 import OrderDetails from '../pages/order-details.vue'
 import InviteStamps from '../pages/invite-stamps.vue'
-import OilNearby from '../pages/oil-nearby.vue'
 
 
 Vue.use(Router)
@@ -145,92 +145,60 @@ export default new Router({
       }
     },
     {
+      path: '/saleOut/:message',
+      component: saleOut,
+
+    },
+    {
+      path: '/AffirmOil',
+      component: AffirmOil
+    },
+    {
       path: '/refuel-before',
-      name: 'refuel-before',
       component: refuelBefore,
-      meta: {
-        title: '一键加油'
-      }
     },
     {
       path: '/order-confirmation',
-      name: 'order-confirmation',
       component: OrderConfirmation,
-      meta: {
-        title: '订单确认'
-      }
     },
     {
       path: '/order-success',
-      name: 'order-success',
       component: OrderSuccess,
-      meta: {
-        title: '支付成功'
-      }
     },
     {
       path: '/grade-success',
-      name: 'grade-success',
       component: GradeSuccess,
-      meta: {
-        title: '评论'
-      }
     },
     {
       path: '/grade',
-      name: 'grade',
       component: Grade,
-      meta: {
-        title: '评论'
-      }
     },
     {
       path: '/affirm-oil',
-      name: 'affirm-oil',
       component: AffirmOil,
-      meta: {
-        title: '确认油站'
-      }
+
     },
     {
       path: '/collect-oil',
-      name: 'collect-oil',
       component: CollectOil,
-      meta: {
-        title: '收藏油站'
-      }
     },
     {
       path: '/oil-details',
-      name: 'oil-details',
       component: OilDetails,
-      meta: {
-        title: '油站详情'
-      }
+
     },
     {
       path: '/order-details',
-      name: 'order-details',
       component: OrderDetails,
-      meta: {
-        title: '订单详情'
-      }
     },
     {
       path: '/invite-stamps',
-      name: 'invite-stamps',
       component: InviteStamps,
-      meta: {
-        title: '邀请送券'
-      }
+
     },
     {
       path: '/oil-nearby',
-      name: 'oil-nearby',
       component: OilNearby,
-      meta: {
-        title: '附近油站'
-      }
-    },
+    }
   ]
 })
