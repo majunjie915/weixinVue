@@ -26,6 +26,7 @@ import CollectOil from '../pages/collect-oil.vue'
 import OilDetails from '../pages/oil-details.vue'
 import OrderDetails from '../pages/order-details.vue'
 import InviteStamps from '../pages/invite-stamps.vue'
+import OilNearby from '../pages/oil-nearby.vue'
 
 
 Vue.use(Router)

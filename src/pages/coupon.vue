@@ -80,12 +80,16 @@
         };
       },
       mounted () {
-        var curHashArr = location.hash.split("/");
-        this.stationId = curHashArr[curHashArr.length-2];
-        this.statusId = curHashArr[curHashArr.length-1];
+        this.stationId = this.$route.params.id;
+        this.statusId = this.$route.params.status;
         for (var i = 0; i<this.stationItems.length; i++){
-          if (this.stationItems[i].id==curHashArr[curHashArr.length-2]){
+          if (this.stationItems[i].id==this.$route.params.id){
             this.curStation = this.stationItems[i].name;
+          }
+        }
+        for (var i = 0; i<this.statusItems.length; i++){
+          if (this.statusItems[i].id==this.$route.params.status){
+            this.curStatus = this.statusItems[i].name;
           }
         }
       },
